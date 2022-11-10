@@ -4,7 +4,6 @@ let lengthInput;
 let chars = '';
 //let charsArray = chars.split(' ')
 
-// Write password to the #password input
 //these are where parameters will be specified
 
 function passwordLength() {
@@ -95,14 +94,16 @@ function generatePassword() {
   return passwordValue;
 }
 
-
-
-
 function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
   
   passwordText.value = password;
+  if (passwordText.value == '') {
+    alert('No password created!! Please select at least one character type to include in generated password.');
+  } else {
+    passwordText.value = password;
+  }
 
 }
 
